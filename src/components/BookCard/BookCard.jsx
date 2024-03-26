@@ -1,27 +1,32 @@
 /* eslint-disable react/prop-types */
+import { CiStar } from "react-icons/ci";
 
-const BookCard = ({ bookTags }) => {
-  console.log(bookTags);
+const BookCard = ({ bookTags, author, rating, category, bookName, image }) => {
   return (
     <div className="card bg-base-100 shadow-xl">
       <figure className="px-10 pt-10">
-        <img
-          src="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg"
-          alt="Shoes"
-          className="rounded-xl"
-        />
+        <img src={image} className="rounded-xl h-[300px] w-full" />
       </figure>
       <div className="card-body">
         <div>
           {bookTags.map((tag, idx) => (
-            <span className="mr-3" key={idx}>
+            <p
+              className="mr-3 inline-block mb-2 text-[#23BE0A] py-2 px-4 bg-slate-200 rounded-xl"
+              key={idx}
+            >
               {tag}
-            </span>
+            </p>
           ))}
         </div>
-        <p>If a dog chews shoes whose shoes does he choose?</p>
-        <div className="card-actions">
-          <button className="btn btn-primary">Buy Now</button>
+        <p>{bookName}</p>
+        <p className="border-b-2 border-dotted pb-6">By: {author}</p>
+        <div className="flex">
+          <p>{category}</p>
+          <div>
+            <p className="flex items-center">
+              {rating} <CiStar></CiStar>
+            </p>
+          </div>
         </div>
       </div>
     </div>

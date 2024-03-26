@@ -1,3 +1,5 @@
+import { NavLink } from "react-router-dom";
+
 const Navbar = () => {
   return (
     <div className="navbar">
@@ -21,31 +23,85 @@ const Navbar = () => {
           </div>
           <ul
             tabIndex={0}
-            className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
+            className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52 flex flex-col gap-1"
           >
             <li>
-              <a className="hover:bg-[#23BE0A] hover:text-white">Home</a>
+              <NavLink
+                to={"/"}
+                className={({ isActive }) =>
+                  isActive
+                    ? "border border-[#23BE0A] text-[#23BE0A] px-3 py-2 rounded-lg"
+                    : "hover:bg-[#23BE0A] hover:text-white px-3 py-2 rounded-lg"
+                }
+              >
+                Home
+              </NavLink>
             </li>
             <li>
-              <a className="hover:bg-[#23BE0A] hover:text-white">Listed Books</a>
+              <NavLink
+                to={"/listed-books"}
+                className={({ isActive }) =>
+                  isActive
+                    ? "border border-[#23BE0A] text-[#23BE0A] px-3 py-2 rounded-lg"
+                    : "hover:bg-[#23BE0A] hover:text-white px-3 py-2 rounded-lg"
+                }
+              >
+                Listed Books
+              </NavLink>
             </li>
             <li>
-              <a className="hover:bg-[#23BE0A] hover:text-white">Pages to Read</a>
+              <NavLink
+                to={"/pages-to-read"}
+                className={({ isActive }) =>
+                  isActive
+                    ? "border  border-[#23BE0A] text-[#23BE0A] px-3 py-2 rounded-lg"
+                    : "hover:bg-[#23BE0A] hover:text-white px-3 py-2 rounded-lg"
+                }
+              >
+                Pages to Read
+              </NavLink>
             </li>
           </ul>
         </div>
         <a className="btn btn-ghost text-xl">Bookish Insight</a>
       </div>
       <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal px-1">
+        <ul className="flex gap-4">
           <li>
-            <a className="hover:bg-[#23BE0A] hover:text-white border border-[#23BE0A] rounded-lg text-[#23BE0A]">Home</a>
+            <NavLink
+              to={"/"}
+              className={({ isActive }) =>
+                isActive
+                  ? "border border-[#23BE0A] text-[#23BE0A] px-3 py-2 rounded-lg"
+                  : "hover:bg-[#23BE0A] hover:text-white px-3 py-2 rounded-lg"
+              }
+            >
+              Home
+            </NavLink>
           </li>
           <li>
-            <a className="hover:bg-[#23BE0A] hover:text-white">Listed Books</a>
+            <NavLink
+              to={"/listed-books"}
+              className={({ isActive }) =>
+                isActive
+                  ? "border border-[#23BE0A] text-[#23BE0A] px-3 py-2 rounded-lg"
+                  : "hover:bg-[#23BE0A] hover:text-white px-3 py-2 rounded-lg"
+              }
+            >
+              Listed Books
+            </NavLink>
           </li>
           <li>
-            <a className="hover:bg-[#23BE0A] hover:text-white">Pages to Read</a>
+            <NavLink
+              to={"/pages-to-read"}
+              className={({ isActive }) =>
+                isActive
+                  ? "border border-[#23BE0A] text-[#23BE0A] px-3 py-2 rounded-lg"
+                  : "hover:bg-[#23BE0A] hover:text-white px-3 py-2 rounded-lg"
+              }
+            >
+              Pages to Read
+            </NavLink>
           </li>
         </ul>
       </div>
