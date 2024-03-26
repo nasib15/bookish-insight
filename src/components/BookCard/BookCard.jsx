@@ -1,9 +1,18 @@
 /* eslint-disable react/prop-types */
 import { CiStar } from "react-icons/ci";
+import { NavLink } from "react-router-dom";
 
-const BookCard = ({ bookTags, author, rating, category, bookName, image }) => {
+const BookCard = ({
+  bookTags,
+  author,
+  rating,
+  category,
+  bookName,
+  image,
+  id,
+}) => {
   return (
-    <div className="card bg-base-100 shadow-xl">
+    <NavLink to={`/books/${id}`} className="card bg-base-100 shadow-xl">
       <figure className="px-10 pt-10">
         <img src={image} className="rounded-xl h-[300px] w-full" />
       </figure>
@@ -29,7 +38,7 @@ const BookCard = ({ bookTags, author, rating, category, bookName, image }) => {
           </div>
         </div>
       </div>
-    </div>
+    </NavLink>
   );
 };
 

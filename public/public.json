@@ -7,7 +7,7 @@
     "review": "A timeless classic exploring the decadence and disillusionment of the American Dream through the eyes of Jay Gatsby.",
     "totalPages": 218,
     "rating": 4.5,
-    "category": "Fiction",
+    "category": "Classic",
     "tags": ["Romance", "Classic", "American Literature"],
     "publisher": "Charles Scribner's Sons",
     "yearOfPublishing": 1925
@@ -46,7 +46,7 @@
     "review": "A seminal coming-of-age novel capturing the angst and alienation of adolescence in post-war America.",
     "totalPages": 224,
     "rating": 4.4,
-    "category": "Fiction",
+    "category": "Thriller",
     "tags": ["Coming-of-Age", "Classic", "American Literature"],
     "publisher": "Little, Brown and Company",
     "yearOfPublishing": 1951
@@ -59,7 +59,7 @@
     "review": "A witty and romantic comedy of manners that explores themes of marriage, class, and societal expectations.",
     "totalPages": 279,
     "rating": 4.6,
-    "category": "Fiction",
+    "category": "Fantasy",
     "tags": ["Romance", "Classic", "Regency Era"],
     "publisher": "T. Egerton, Whitehall",
     "yearOfPublishing": 1813
@@ -85,7 +85,7 @@
     "review": "The magical journey of a young wizard, Harry Potter, as he discovers his true identity and battles the dark wizard Voldemort.",
     "totalPages": 309,
     "rating": 4.7,
-    "category": "Fantasy",
+    "category": "Family",
     "tags": ["Magic", "Young Adult", "Adventure"],
     "publisher": "Bloomsbury",
     "yearOfPublishing": 1997
@@ -111,7 +111,7 @@
     "review": "A psychological thriller exploring the moral dilemmas and consequences of a young student's decision to commit murder.",
     "totalPages": 551,
     "rating": 4.5,
-    "category": "Fiction",
+    "category": "Adventure",
     "tags": ["Psychological", "Literature", "Philosophical"],
     "publisher": "The Russian Messenger",
     "yearOfPublishing": 1866

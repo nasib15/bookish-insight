@@ -8,7 +8,7 @@ const BookSection = () => {
     <div className="pb-10">
       <h1 className="text-center text-4xl font-bold mb-9">Books</h1>
       <div className="grid grid-cols-3 gap-6">
-        {books.map((book) => (
+        {books.map((book, idx) => (
           <BookCard
             bookName={book.bookName}
             author={book.author}
@@ -16,7 +16,8 @@ const BookSection = () => {
             rating={book.rating}
             bookTags={book.tags}
             image={book.image}
-            key={book.id}
+            key={idx}
+            id={book.bookId}
           ></BookCard>
         ))}
       </div>
