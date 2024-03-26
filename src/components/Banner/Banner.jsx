@@ -1,3 +1,5 @@
+import { NavLink } from "react-router-dom";
+
 const Banner = () => {
   return (
     <div className="mt-6 mb-24 hero min-h-[80vh] bg-slate-100 rounded-3xl">
@@ -11,9 +13,12 @@ const Banner = () => {
             Books to freshen up your bookshelf
           </h1>
 
-          <button className="btn text-white bg-[#23BE0A] mt-12">
+          <NavLink
+            to={`/listed-books`}
+            className="btn text-white bg-[#23BE0A] mt-12"
+          >
             View The List
-          </button>
+          </NavLink>
         </div>
       </div>
     </div>

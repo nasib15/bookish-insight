@@ -3,6 +3,7 @@ import MainLayout from "../layout/MainLayout";
 import Home from "../pages/Home";
 import BookDetails from "../components/BookDetails/BookDetails";
 import ListedBooks from "../pages/ListedBooks";
+import PageRead from "../pages/PageRead";
 
 const router = createBrowserRouter([
   {
@@ -26,7 +27,7 @@ const router = createBrowserRouter([
 
       {
         path: "/pages-to-read",
-        element: <div>Pages</div>,
+        element: <PageRead></PageRead>,
       },
     ],
   },

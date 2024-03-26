@@ -7,9 +7,11 @@ import {
 } from "@material-tailwind/react";
 import { useState } from "react";
 import ReadCard from "../ReadCard/ReadCard";
+import { getLocalStorage } from "../../utils/localStorage";
 
 const ListedTabs = () => {
   const [activeTab, setActiveTab] = useState("read");
+  const getReadBooks = getLocalStorage();
   const data = [
     {
       label: "Read Books",
@@ -45,11 +47,23 @@ const ListedTabs = () => {
         ))}
       </TabsHeader>
       <TabsBody className="my-2">
-        {data.map(({ value, desc }) => (
-          <TabPanel key={value} value={value}>
-            {desc}
-          </TabPanel>
-        ))}
+        <TabPanel value={"read"}>
+          {getReadBooks.map((book, idx) => (
+            <ReadCard
+              key={idx}
+              totalPages={book.totalPages}
+              bookName={book.bookName}
+              publisher={book.publisher}
+              author={book.author}
+              category={book.category}
+              rating={book.rating}
+              bookTags={book.tags}
+              image={book.image}
+              id={book.bookId}
+              yearOfPublishing={book.yearOfPublishing}
+            ></ReadCard>
+          ))}
+        </TabPanel>
       </TabsBody>
     </Tabs>
   );

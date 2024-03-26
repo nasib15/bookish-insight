@@ -1,4 +1,5 @@
 import { useLoaderData, useParams } from "react-router-dom";
+import { setLocalStorage } from "../../utils/localStorage";
 
 const BookDetails = () => {
   const books = useLoaderData();
@@ -17,6 +18,10 @@ const BookDetails = () => {
     yearOfPublishing,
     image,
   } = bookObj;
+
+  const handleRead = () => {
+    setLocalStorage(bookObj);
+  };
 
   return (
     <div className=" mt-10 mb-10 card lg:card-side bg-base-100 shadow-xl">
@@ -47,7 +52,9 @@ const BookDetails = () => {
         <div>Year of Publishing: {yearOfPublishing}</div>
         <div>Rating: {rating}</div>
         <div className="card-actions mt-4">
-          <button className="btn text-white bg-[#23BE0A]">Read</button>
+          <button onClick={handleRead} className="btn text-white bg-[#23BE0A]">
+            Read
+          </button>
           <button className="btn text-white bg-[#50B1C9]">Wishlist</button>
         </div>
       </div>
