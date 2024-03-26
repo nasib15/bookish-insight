@@ -7,12 +7,15 @@ import {
 } from "@material-tailwind/react";
 import { useState } from "react";
 import ReadCard from "../ReadCard/ReadCard";
-import { getLocalStorage } from "../../utils/localStorage";
+import { getLocalStorage, getWishlist } from "../../utils/localStorage";
+import Wishlist from "../Wishlist/Wishlist";
 
 const ListedTabs = () => {
   const [activeTab, setActiveTab] = useState("read");
   // const [sorting, setSorting] = useState([]);
   const getReadBooks = getLocalStorage();
+  const getWishlistBooks = getWishlist();
+
   const data = [
     {
       label: "Read Books",
@@ -22,9 +25,7 @@ const ListedTabs = () => {
     {
       label: "Wishlist Books",
       value: "wishlist",
-      desc: `It really matters and then like it really doesn't matter.
-        What matters is the people who are sparked by it. And the people 
-        who are like offended by it, it doesn't matter.`,
+      desc: <Wishlist></Wishlist>,
     },
   ];
   return (
@@ -63,6 +64,23 @@ const ListedTabs = () => {
               id={book.bookId}
               yearOfPublishing={book.yearOfPublishing}
             ></ReadCard>
+          ))}
+        </TabPanel>
+        <TabPanel value={"wishlist"}>
+          {getWishlistBooks.map((book, idx) => (
+            <Wishlist
+              key={idx}
+              totalPages={book.totalPages}
+              bookName={book.bookName}
+              publisher={book.publisher}
+              author={book.author}
+              category={book.category}
+              rating={book.rating}
+              bookTags={book.tags}
+              image={book.image}
+              id={book.bookId}
+              yearOfPublishing={book.yearOfPublishing}
+            ></Wishlist>
           ))}
         </TabPanel>
       </TabsBody>
