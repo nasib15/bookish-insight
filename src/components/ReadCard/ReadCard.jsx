@@ -56,7 +56,7 @@ const ReadCard = ({
               to={`/books/${id}`}
               className="px-4 py-2 bg-[#23BE0A] text-white rounded-3xl"
             >
-              View Details:
+              View Details
             </NavLink>
           </div>
         </div>

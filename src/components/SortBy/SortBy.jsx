@@ -11,7 +11,7 @@ const SortBy = () => {
         </div>
         <ul
           tabIndex={0}
-          className="dropdown-content mt-14 bg-white z-[10] menu p-2 shadow rounded-box w-52"
+          className="mt-14 dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52"
         >
           <li>
             <a>Rating</a>
@@ -20,7 +20,7 @@ const SortBy = () => {
             <a>Number of Pages</a>
           </li>
           <li>
-            <a>Publishing Year</a>
+            <a>Published Year</a>
           </li>
         </ul>
       </div>

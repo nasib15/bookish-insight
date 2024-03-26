@@ -11,6 +11,7 @@ import { getLocalStorage } from "../../utils/localStorage";
 
 const ListedTabs = () => {
   const [activeTab, setActiveTab] = useState("read");
+  // const [sorting, setSorting] = useState([]);
   const getReadBooks = getLocalStorage();
   const data = [
     {
@@ -29,10 +30,10 @@ const ListedTabs = () => {
   return (
     <Tabs value={activeTab}>
       <TabsHeader
-        className="rounded-none border-b border-blue-gray-50 bg-transparent p-0"
+        className="rounded-none border-blue-gray-50 bg-transparent p-0 w-72"
         indicatorProps={{
           className:
-            "bg-transparent border-b-2 border-gray-900 shadow-none rounded-none",
+            "bg-transparent border-2 border-b-0 border-slate-500 shadow-none rounded-none ",
         }}
       >
         {data.map(({ label, value }) => (
