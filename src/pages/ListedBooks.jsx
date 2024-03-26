@@ -1,0 +1,16 @@
+import SortBy from "../components/SortBy/SortBy";
+import ListedTabs from "../components/ListedTabs/ListedTabs";
+
+const ListedBooks = () => {
+  return (
+    <div>
+      <h2 className="bg-red-300 rounded-xl py-8 text-center font-bold text-2xl mt-6 mb-8">
+        Books
+      </h2>
+      <SortBy></SortBy>
+      <ListedTabs></ListedTabs>
+    </div>
+  );
+};
+
+export default ListedBooks;
