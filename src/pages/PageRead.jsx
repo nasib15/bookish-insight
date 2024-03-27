@@ -1,11 +1,11 @@
-
+import Chart from "../components/Chart/Chart";
 
 const PageRead = () => {
-    return (
-        <div>
-            
-        </div>
-    );
+  return (
+    <div>
+      <Chart></Chart>
+    </div>
+  );
 };
 
 export default PageRead;

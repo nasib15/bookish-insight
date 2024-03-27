@@ -15,6 +15,21 @@ const ListedTabs = () => {
   // const [sorting, setSorting] = useState([]);
   const getReadBooks = getLocalStorage();
   const getWishlistBooks = getWishlist();
+  console.log(getReadBooks, getWishlistBooks);
+  const sorting = (sortedBy) => {
+    const sortedBooks = getReadBooks.sort((a, b) => {
+      if (sortedBy === "rating") {
+        return b.rating - a.rating;
+      }
+      if (sortedBy === "pages") {
+        return b.totalPages - a.totalPages;
+      }
+      if (sortedBy === "year") {
+        return b.yearOfPublishing - a.yearOfPublishing;
+      }
+    });
+    console.log(sortedBooks);
+  }
 
   const data = [
     {

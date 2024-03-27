@@ -1,3 +1,5 @@
+import { sorting } from "../../utils/sorting";
+
 const SortBy = () => {
   return (
     <div className="w-full">
@@ -14,13 +16,13 @@ const SortBy = () => {
           className="mt-14 dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52"
         >
           <li>
-            <a>Rating</a>
+            <a onClick={() => sorting("rating")}>Rating</a>
           </li>
           <li>
-            <a>Number of Pages</a>
+            <a onClick={() => sorting("pages")}>Number of Pages</a>
           </li>
           <li>
-            <a>Published Year</a>
+            <a onClick={() => sorting("year")}>Published Year</a>
           </li>
         </ul>
       </div>
