@@ -5,17 +5,21 @@ import {
   Tab,
   TabPanel,
 } from "@material-tailwind/react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import ReadCard from "../ReadCard/ReadCard";
 import { getLocalStorage, getWishlist } from "../../utils/localStorage";
 import Wishlist from "../Wishlist/Wishlist";
 
 const ListedTabs = () => {
   const [activeTab, setActiveTab] = useState("read");
-  // const [sorting, setSorting] = useState([]);
   const getReadBooks = getLocalStorage();
   const getWishlistBooks = getWishlist();
-  console.log(getReadBooks, getWishlistBooks);
+  // const [sorting, setSorting] = useState([]);
+
+  const [readBooks, setReadBooks] = useState(getReadBooks);
+  useEffect(() => {
+    setReadBooks(getReadBooks);
+  }, [getReadBooks]);
   const sorting = (sortedBy) => {
     const sortedBooks = getReadBooks.sort((a, b) => {
       if (sortedBy === "rating") {
@@ -29,7 +33,7 @@ const ListedTabs = () => {
       }
     });
     console.log(sortedBooks);
-  }
+  };
 
   const data = [
     {
