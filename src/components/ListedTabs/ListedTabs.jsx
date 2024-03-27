@@ -14,26 +14,11 @@ const ListedTabs = () => {
   const [activeTab, setActiveTab] = useState("read");
   const getReadBooks = getLocalStorage();
   const getWishlistBooks = getWishlist();
-  // const [sorting, setSorting] = useState([]);
 
-  const [readBooks, setReadBooks] = useState(getReadBooks);
-  useEffect(() => {
-    setReadBooks(getReadBooks);
-  }, [getReadBooks]);
-  const sorting = (sortedBy) => {
-    const sortedBooks = getReadBooks.sort((a, b) => {
-      if (sortedBy === "rating") {
-        return b.rating - a.rating;
-      }
-      if (sortedBy === "pages") {
-        return b.totalPages - a.totalPages;
-      }
-      if (sortedBy === "year") {
-        return b.yearOfPublishing - a.yearOfPublishing;
-      }
-    });
-    console.log(sortedBooks);
-  };
+  // const [readBooks, setReadBooks] = useState(getReadBooks);
+  // useEffect(() => {
+  //   setReadBooks(getReadBooks);
+  // }, [getReadBooks]);
 
   const data = [
     {
@@ -50,7 +35,7 @@ const ListedTabs = () => {
   return (
     <Tabs value={activeTab}>
       <TabsHeader
-        className="rounded-none border-blue-gray-50 bg-transparent p-0 w-72"
+        className="mt-20 rounded-none border-blue-gray-50 bg-transparent p-0 w-72"
         indicatorProps={{
           className:
             "bg-transparent border-2 border-b-0 border-slate-500 shadow-none rounded-none ",
@@ -69,7 +54,7 @@ const ListedTabs = () => {
       </TabsHeader>
       <TabsBody className="my-2">
         <TabPanel value={"read"}>
-          {readBooks.map((book, idx) => (
+          {getReadBooks.map((book, idx) => (
             <ReadCard
               key={idx}
               totalPages={book.totalPages}

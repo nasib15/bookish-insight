@@ -1,4 +1,5 @@
-import { sorting } from "../../utils/sorting";
+
+import { sorting } from './../../utils/sorting';
 
 const SortBy = () => {
   return (
