@@ -69,7 +69,7 @@ const ListedTabs = () => {
       </TabsHeader>
       <TabsBody className="my-2">
         <TabPanel value={"read"}>
-          {getReadBooks.map((book, idx) => (
+          {readBooks.map((book, idx) => (
             <ReadCard
               key={idx}
               totalPages={book.totalPages}
