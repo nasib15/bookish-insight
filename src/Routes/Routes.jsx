@@ -6,6 +6,7 @@ import ListedBooks from "../pages/ListedBooks";
 import PageRead from "../pages/PageRead";
 import ErrorPage from "../components/Errorpage/Errorpage";
 import About from "../pages/About";
+import PricingPage from "../pages/PricingPage";
 
 const router = createBrowserRouter([
   {
@@ -35,6 +36,10 @@ const router = createBrowserRouter([
       {
         path: "/about",
         element: <About></About>,
+      },
+      {
+        path: "/pricing",
+        element: <PricingPage></PricingPage>,
       },
     ],
   },

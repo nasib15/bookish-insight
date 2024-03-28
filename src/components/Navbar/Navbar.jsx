@@ -63,6 +63,18 @@ const Navbar = () => {
             </li>
             <li>
               <NavLink
+                to={"/pricing"}
+                className={({ isActive }) =>
+                  isActive
+                    ? "border border-[#23BE0A] text-[#23BE0A] px-3 py-2 rounded-lg"
+                    : "hover:bg-[#23BE0A] hover:text-white px-3 py-2 rounded-lg"
+                }
+              >
+                Pricing
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
                 to={"/about"}
                 className={({ isActive }) =>
                   isActive
@@ -75,7 +87,10 @@ const Navbar = () => {
             </li>
           </ul>
         </div>
-        <Link to={"/"} className="btn btn-ghost text-2xl lg:text-3xl font-bold px-1">
+        <Link
+          to={"/"}
+          className="btn btn-ghost text-2xl lg:text-3xl font-bold px-1"
+        >
           Bookish Insight
         </Link>
       </div>
@@ -115,6 +130,18 @@ const Navbar = () => {
               }
             >
               Pages to Read
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              to={"/pricing"}
+              className={({ isActive }) =>
+                isActive
+                  ? "border border-[#23BE0A] text-[#23BE0A] px-3 py-2 rounded-lg"
+                  : "hover:bg-[#23BE0A] hover:text-white px-3 py-2 rounded-lg"
+              }
+            >
+              Pricing
             </NavLink>
           </li>
           <li>
