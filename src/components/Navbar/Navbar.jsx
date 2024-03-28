@@ -105,6 +105,18 @@ const Navbar = () => {
               Pages to Read
             </NavLink>
           </li>
+          <li>
+            <NavLink
+              to={"/about"}
+              className={({ isActive }) =>
+                isActive
+                  ? "border border-[#23BE0A] text-[#23BE0A] px-3 py-2 rounded-lg"
+                  : "hover:bg-[#23BE0A] hover:text-white px-3 py-2 rounded-lg"
+              }
+            >
+              About
+            </NavLink>
+          </li>
         </ul>
       </div>
       <div className="navbar-end gap-4 ">

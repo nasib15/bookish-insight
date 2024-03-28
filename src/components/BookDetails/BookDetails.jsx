@@ -1,6 +1,5 @@
 import { useLoaderData, useParams } from "react-router-dom";
 import { setLocalStorage, setWishlist } from "../../utils/localStorage";
-import { toast } from "react-toastify";
 
 const BookDetails = () => {
   const books = useLoaderData();
@@ -59,7 +58,6 @@ const BookDetails = () => {
           <button
             onClick={() => {
               handleRead();
-
             }}
             className="btn text-white bg-[#23BE0A]"
           >
@@ -68,7 +66,6 @@ const BookDetails = () => {
           <button
             onClick={() => {
               handleWishlist();
-
             }}
             className="btn text-white bg-[#50B1C9]"
           >

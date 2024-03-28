@@ -9,23 +9,11 @@ import { useEffect, useState } from "react";
 import ReadCard from "../ReadCard/ReadCard";
 import { getLocalStorage, getWishlist } from "../../utils/localStorage";
 import Wishlist from "../Wishlist/Wishlist";
-// import { sorting } from "../../utils/sorting";
-// import { useContext } from "react";
-// import {
-//   PagesContext,
-//   ReadingContext,
-//   YearContext,
-// } from "../../pages/ListedBooks";
-// import { sorting } from "../SortBy/SortBy";
+
 
 const ListedTabs = () => {
-  // const Reading = useContext(ReadingContext);
-  // const Pages = useContext(PagesContext);
-  // const Year = useContext(YearContext);
 
   const [activeTab, setActiveTab] = useState("read");
-  // const getReadBooks = getLocalStorage();
-  // const getWishlistBooks = getWishlist();
 
   // For readbook state
   const [readBooks, setReadBooks] = useState([]);
@@ -40,40 +28,7 @@ const ListedTabs = () => {
     const data = getWishlist();
     setWishlist(data);
   }, []);
-
-  // For sorting
-  // const [sortedBooks, setSortedBooks] = useState([]);
-
-  // const sorting = (sortedBy) => {
-  //   const readBooks = getLocalStorage();
-  //   const sortedBooks = readBooks.sort((a, b) => {
-  //     if (sortedBy === "rating") {
-  //       return b.rating - a.rating;
-  //     }
-  //     if (sortedBy === "pages") {
-  //       return b.totalPages - a.totalPages;
-  //     }
-  //     if (sortedBy === "year") {
-  //       return b.yearOfPublishing - a.yearOfPublishing;
-  //     }
-  //   });
-
-  // const sorting = (sortedBy) => {
-  //   const readBooks = getLocalStorage();
-  //   const sortedBooks = readBooks.sort((a, b) => {
-  //     if (sortedBy === "rating") {
-  //       return b.rating - a.rating;
-  //     }
-  //     if (sortedBy === "pages") {
-  //       return b.totalPages - a.totalPages;
-  //     }
-  //     if (sortedBy === "year") {
-  //       return b.yearOfPublishing - a.yearOfPublishing;
-  //     }
-  //   });
-  //   return sortedBooks;
-  // };
-
+ 
   const data = [
     {
       label: "Read Books",
