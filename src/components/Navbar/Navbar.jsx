@@ -2,7 +2,7 @@ import { Link, NavLink } from "react-router-dom";
 
 const Navbar = () => {
   return (
-    <div className="navbar">
+    <div className="navbar mt-4">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -61,9 +61,21 @@ const Navbar = () => {
                 Pages to Read
               </NavLink>
             </li>
+            <li>
+              <NavLink
+                to={"/about"}
+                className={({ isActive }) =>
+                  isActive
+                    ? "border border-[#23BE0A] text-[#23BE0A] px-3 py-2 rounded-lg"
+                    : "hover:bg-[#23BE0A] hover:text-white px-3 py-2 rounded-lg"
+                }
+              >
+                About
+              </NavLink>
+            </li>
           </ul>
         </div>
-        <Link to={"/"} className="btn btn-ghost text-xl">
+        <Link to={"/"} className="btn btn-ghost text-2xl lg:text-3xl font-bold px-1">
           Bookish Insight
         </Link>
       </div>
@@ -119,7 +131,7 @@ const Navbar = () => {
           </li>
         </ul>
       </div>
-      <div className="navbar-end gap-4 ">
+      <div className="navbar-end gap-2 lg:gap-4 ">
         <a className="btn bg-[#23BE0A] text-white">Sign In</a>
         <a className="btn bg-[#59C6D2] text-white">Sign Up</a>
       </div>
