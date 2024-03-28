@@ -1,8 +1,7 @@
 import { getLocalStorage } from "./localStorage";
 
-const readBooks = getLocalStorage();
-
 export const sorting = (sortedBy) => {
+  const readBooks = getLocalStorage();
   const sortedBooks = readBooks.sort((a, b) => {
     if (sortedBy === "rating") {
       return b.rating - a.rating;

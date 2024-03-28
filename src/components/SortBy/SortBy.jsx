@@ -1,33 +1,20 @@
+/* eslint-disable react/prop-types */
+// import { sorting } from "./../../utils/sorting";
+// import { useContext } from "react";
+// import { sorting } from "./../ListedTabs/ListedTabs";
+// import {
+//   PagesContext,
+//   ReadingContext,
+//   YearContext,
+// } from "../../pages/ListedBooks";
+// import { getLocalStorage } from "../../utils/localStorage";
 
-import { sorting } from './../../utils/sorting';
-
-const SortBy = () => {
+const SortBy = ({ sorting }) => {
+  // const Reading = useContext(ReadingContext);
+  // const Pages = useContext(PagesContext);
+  // const Year = useContext(YearContext);
   return (
-    <div className="w-full">
-      <div className="dropdown flex justify-center">
-        <div
-          tabIndex={0}
-          role="button"
-          className="btn m-1 bg-[#23BE0A] text-white"
-        >
-          Sort By
-        </div>
-        <ul
-          tabIndex={0}
-          className="mt-14 dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52"
-        >
-          <li>
-            <a onClick={() => sorting("rating")}>Rating</a>
-          </li>
-          <li>
-            <a onClick={() => sorting("pages")}>Number of Pages</a>
-          </li>
-          <li>
-            <a onClick={() => sorting("year")}>Published Year</a>
-          </li>
-        </ul>
-      </div>
-    </div>
+    
   );
 };
 
