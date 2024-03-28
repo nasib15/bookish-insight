@@ -27,22 +27,29 @@ const BookDetails = () => {
   };
 
   return (
-    <div className=" mt-10 mb-10 card lg:card-side bg-base-100 shadow-xl">
-      <figure className="max-w-xl">
-        <img className="h-full" src={image} alt="Album" />
+    <div className=" mt-10 mb-10 card lg:flex lg:flex-row bg-base-100">
+      <figure className="lg:min-w-[35vw] lg:max-w-[35vw]">
+        <img
+          className="h-[90%] rounded-2xl object-cover"
+          src={image}
+          alt="Album"
+        />
       </figure>
       <div className="card-body">
-        <h2 className="card-title">{bookName}</h2>
-        <p>By: {author}</p>
+        <h2 className="card-title text-3xl">{bookName}</h2>
+        <p className="opacity-80 font-medium">By: {author}</p>
         <div className="divider"></div>
-        <div>{category}</div>
+        <div className="opacity-80 font-medium">{category}</div>
         <div className="divider"></div>
-        <div>Review: {review}</div>
         <div>
-          Tag:{" "}
+          <span className="font-bold">Review:</span>{" "}
+          <span className="opacity-70">{review}</span>
+        </div>
+        <div>
+          <span className="font-bold mr-4">Tag: </span>
           {tags.map((tag, idx) => (
             <p
-              className="mr-3 inline-block mb-2 text-[#23BE0A] py-2 px-4 bg-slate-200 rounded-xl"
+              className="mr-3 inline-block mb-3 text-[#23BE0A] py-2 px-4 bg-[#23BE0A0D] rounded-xl"
               key={idx}
             >
               {tag}
@@ -50,10 +57,26 @@ const BookDetails = () => {
           ))}
         </div>
         <div className="divider"></div>
-        <div>Number of Pages: {totalPages}</div>
-        <div>Publisher: {publisher}</div>
-        <div>Year of Publishing: {yearOfPublishing}</div>
-        <div>Rating: {rating}</div>
+        <div className="flex flex-col gap-3 lg:w-[50%]">
+          <div className="flex justify-between">
+            <span className="opacity-80">Number of Pages: </span>
+            <span className="font-semibold text-[#131313]">{totalPages}</span>
+          </div>
+          <div className="flex justify-between">
+            <span className="opacity-80">Publisher: </span>
+            <span className="font-semibold text-[#131313]">{publisher}</span>
+          </div>
+          <div className="flex justify-between">
+            <span className="opacity-80">Year of Publishing: </span>
+            <span className="font-semibold text-[#131313]">
+              {yearOfPublishing}
+            </span>
+          </div>
+          <div className="flex justify-between">
+            <span className="opacity-80">Rating:</span>{" "}
+            <span className="font-semibold text-[#131313]">{rating}</span>
+          </div>
+        </div>
         <div className="card-actions mt-4">
           <button
             onClick={() => {

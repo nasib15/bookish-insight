@@ -8,11 +8,8 @@ import {
 import { useEffect, useState } from "react";
 import ReadCard from "../ReadCard/ReadCard";
 import { getLocalStorage, getWishlist } from "../../utils/localStorage";
-import Wishlist from "../Wishlist/Wishlist";
-
 
 const ListedTabs = () => {
-
   const [activeTab, setActiveTab] = useState("read");
 
   // For readbook state
@@ -28,7 +25,7 @@ const ListedTabs = () => {
     const data = getWishlist();
     setWishlist(data);
   }, []);
- 
+
   const data = [
     {
       label: "Read Books",
@@ -38,7 +35,7 @@ const ListedTabs = () => {
     {
       label: "Wishlist Books",
       value: "wishlist",
-      desc: <Wishlist></Wishlist>,
+      desc: <ReadCard></ReadCard>,
     },
   ];
   return (
@@ -114,6 +111,7 @@ const ListedTabs = () => {
           </ul>
         </div>
       </div>
+      {/*Tabs */}
       <Tabs value={activeTab}>
         <TabsHeader
           className="mt-20 rounded-none border-blue-gray-50 bg-transparent p-0 w-72"
@@ -153,7 +151,7 @@ const ListedTabs = () => {
           </TabPanel>
           <TabPanel value={"wishlist"}>
             {wishlist.map((book, idx) => (
-              <Wishlist
+              <ReadCard
                 key={idx}
                 totalPages={book.totalPages}
                 bookName={book.bookName}
@@ -165,7 +163,7 @@ const ListedTabs = () => {
                 image={book.image}
                 id={book.bookId}
                 yearOfPublishing={book.yearOfPublishing}
-              ></Wishlist>
+              ></ReadCard>
             ))}
           </TabPanel>
         </TabsBody>

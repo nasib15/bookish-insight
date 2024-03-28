@@ -1,5 +1,14 @@
 /* eslint-disable react/prop-types */
-import { BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid } from "recharts";
+import {
+  ResponsiveContainer,
+  BarChart,
+  Bar,
+  Cell,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+  Tooltip,
+} from "recharts";
 import { getLocalStorage } from "../../utils/localStorage";
 import { useEffect, useState } from "react";
 
@@ -37,35 +46,38 @@ const Chart = () => {
   const [books, setBooks] = useState(data);
   useEffect(() => {
     setBooks(data);
-  }, [data]);
+  }, []);
 
   return (
-    <div className="flex justify-center items-center h-[85vh]">
-      <BarChart
-        width={800}
-        height={400}
-        data={data}
-        margin={{
-          top: 20,
-          right: 30,
-          left: 20,
-          bottom: 5,
-        }}
-      >
-        <CartesianGrid strokeDasharray="3 3" />
-        <XAxis dataKey="bookName" />
-        <YAxis />
-        <Bar
-          dataKey="totalPages"
-          fill="#8884d8"
-          shape={<TriangleBar />}
-          label={{ position: "top" }}
+    <div className="flex mx-auto justify-center w-[90%] h-[80vh]">
+      <ResponsiveContainer>
+        <BarChart
+          width={850}
+          height={500}
+          data={data}
+          margin={{
+            top: 20,
+            right: 30,
+            left: 20,
+            bottom: 5,
+          }}
         >
-          {books.map((entry, index) => (
-            <Cell key={`cell-${index}`} fill={colors[index % 20]} />
-          ))}
-        </Bar>
-      </BarChart>
+          <CartesianGrid strokeDasharray="3 3" />
+          <XAxis dataKey="bookName" />
+          <YAxis />
+          <Tooltip />
+          <Bar
+            dataKey="totalPages"
+            fill="#8884d8"
+            shape={<TriangleBar />}
+            label={{ position: "top" }}
+          >
+            {books.map((entry, index) => (
+              <Cell key={`cell-${index}`} fill={colors[index % 20]} />
+            ))}
+          </Bar>
+        </BarChart>
+      </ResponsiveContainer>
     </div>
   );
 };
