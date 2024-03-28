@@ -57,16 +57,20 @@ const ListedTabs = () => {
             <li>
               <a
                 onClick={() => {
-                  const readData = getLocalStorage();
-                  const sortedData = readData.sort((a, b) => {
-                    return b.rating - a.rating;
-                  });
-                  setReadBooks(sortedData);
-                  const wishlistData = getWishlist();
-                  const sortedWishlist = wishlistData.sort((a, b) => {
-                    return b.rating - a.rating;
-                  });
-                  setWishlist(sortedWishlist);
+                  if (activeTab === "read") {
+                    const readData = getLocalStorage();
+                    const sortedData = readData.sort((a, b) => {
+                      return b.rating - a.rating;
+                    });
+                    setReadBooks(sortedData);
+                  }
+                  if (activeTab === "wishlist") {
+                    const wishlistData = getWishlist();
+                    const sortedWishlist = wishlistData.sort((a, b) => {
+                      return b.rating - a.rating;
+                    });
+                    setWishlist(sortedWishlist);
+                  }
                 }}
               >
                 Rating
@@ -75,16 +79,20 @@ const ListedTabs = () => {
             <li>
               <a
                 onClick={() => {
-                  const readData = getLocalStorage();
-                  const sortedData = readData.sort((a, b) => {
-                    return b.totalPages - a.totalPages;
-                  });
-                  setReadBooks(sortedData);
-                  const wishlistData = getWishlist();
-                  const sortedWishlist = wishlistData.sort((a, b) => {
-                    return b.totalPages - a.totalPages;
-                  });
-                  setWishlist(sortedWishlist);
+                  if (activeTab === "read") {
+                    const readData = getLocalStorage();
+                    const sortedData = readData.sort((a, b) => {
+                      return b.totalPages - a.totalPages;
+                    });
+                    setReadBooks(sortedData);
+                  }
+                  if (activeTab === "wishlist") {
+                    const wishlistData = getWishlist();
+                    const sortedWishlist = wishlistData.sort((a, b) => {
+                      return b.totalPages - a.totalPages;
+                    });
+                    setWishlist(sortedWishlist);
+                  }
                 }}
               >
                 Number of Pages
@@ -93,16 +101,20 @@ const ListedTabs = () => {
             <li>
               <a
                 onClick={() => {
-                  const readData = getLocalStorage();
-                  const sortedData = readData.sort((a, b) => {
-                    return b.yearOfPublishing - a.yearOfPublishing;
-                  });
-                  setReadBooks(sortedData);
-                  const wishlistData = getWishlist();
-                  const sortedWishlist = wishlistData.sort((a, b) => {
-                    return b.yearOfPublishing - a.yearOfPublishing;
-                  });
-                  setWishlist(sortedWishlist);
+                  if (activeTab === "read") {
+                    const readData = getLocalStorage();
+                    const sortedData = readData.sort((a, b) => {
+                      return b.yearOfPublishing - a.yearOfPublishing;
+                    });
+                    setReadBooks(sortedData);
+                  }
+                  if (activeTab === "wishlist") {
+                    const wishlistData = getWishlist();
+                    const sortedWishlist = wishlistData.sort((a, b) => {
+                      return b.yearOfPublishing - a.yearOfPublishing;
+                    });
+                    setWishlist(sortedWishlist);
+                  }
                 }}
               >
                 Published Year
@@ -113,24 +125,26 @@ const ListedTabs = () => {
       </div>
       {/*Tabs */}
       <Tabs value={activeTab}>
-        <TabsHeader
-          className="mt-20 rounded-none border-blue-gray-50 bg-transparent p-0 w-72"
-          indicatorProps={{
-            className:
-              "bg-transparent border-2 border-b-0 border-slate-500 shadow-none rounded-none ",
-          }}
-        >
-          {data.map(({ label, value }) => (
-            <Tab
-              key={value}
-              value={value}
-              onClick={() => setActiveTab(value)}
-              className={activeTab === value ? "text-gray-900" : ""}
-            >
-              {label}
-            </Tab>
-          ))}
-        </TabsHeader>
+        <div>
+          <TabsHeader
+            className="mt-20 rounded-none border-blue-gray-50 bg-transparent p-0 w-96"
+            indicatorProps={{
+              className:
+                "bg-transparent border-2 border-b-0 border-slate-500 shadow-none rounded-lg ",
+            }}
+          >
+            {data.map(({ label, value }) => (
+              <Tab
+                key={value}
+                value={value}
+                onClick={() => setActiveTab(value)}
+                className={activeTab === value ? "text-gray-900" : "opacity-40"}
+              >
+                {label}
+              </Tab>
+            ))}
+          </TabsHeader>
+        </div>
         <TabsBody className="my-2">
           <TabPanel value={"read"}>
             {readBooks.map((book, idx) => (
