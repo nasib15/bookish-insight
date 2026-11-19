@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import { MdOutlineStarBorder } from "react-icons/md";
 import { NavLink } from "react-router-dom";
 
