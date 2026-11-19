@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import { NavLink } from "react-router-dom";
 import { IoPeopleOutline } from "react-icons/io5";
 import { RiPagesLine } from "react-icons/ri";
